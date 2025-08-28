@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">camera-project-app</string>
+    <string name="titulo_camera">Câmera</string>
+    <string name="botao_tirar_foto">Tirar Foto</string>
+    <string name="descricao_imagem_capturada">Foto capturada pela câmera do usuário</string>
+
 </resources>
