@@ -154,4 +154,4 @@ Abaixo estão exemplos das imagens envolvidas no funcionamento do sistema:
   <img src="assets/imagem-mobile.jpg" alt="Imagem enviada do app" width="180"/>
 
 - **Imagem recebida pelo servidor:**  
-  <img src="assets/imagem-server.png" alt="Imagem recebida pelo servidor"
+  <img src="assets/imagem-server.png" alt="Imagem recebida pelo servidor"/>
