@@ -148,5 +148,7 @@ Para mudar a porta, altere o valor de `PORT`. Para escutar apenas em um IP espec
 
 ## Imagens do Projeto
 
-<img src="assets/imagem-mobile.jpg" alt="Imagem enviada do app" width="200"/>
-<img src="assets/imagem-server.png" alt="Imagem recebida pelo servidor" width="200"/>
+Imagem enviada do app
+<img src="assets/imagem-mobile.jpg" alt="Imagem enviada do app" width="250"/>
+Imagem recebida pelo servidor
+<img src="assets/imagem-server.png" alt="Imagem recebida pelo servidor" width="250"/>
