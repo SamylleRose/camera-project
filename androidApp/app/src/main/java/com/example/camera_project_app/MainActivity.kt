@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             val imageBitmap = data?.extras?.getParcelable("data", Bitmap::class.java)
             imageView.setImageBitmap(imageBitmap)
 
-            // 👉 Enviar a foto para o servidor
+            // Enviar a foto para o servidor
             if (imageBitmap != null) {
                 enviarFotoParaServidor(imageBitmap)
             }
