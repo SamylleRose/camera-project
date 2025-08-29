@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import java.io.ByteArrayOutputStream
 import java.io.DataOutputStream
 import java.net.Socket
-import kotlin.concurrent.thread
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,29 +28,30 @@ class MainActivity : AppCompatActivity() {
     private val SERVER_PORT = 5001     // Mesma porta do servidor Python
 
 
-
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-    private val resultLauncherCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val data: Intent? = result.data
-            val imageBitmap = data?.extras?.getParcelable("data", Bitmap::class.java)
-            imageView.setImageBitmap(imageBitmap)
+    private val resultLauncherCamera =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val data: Intent? = result.data
+                val imageBitmap = data?.extras?.getParcelable("data", Bitmap::class.java)
+                imageView.setImageBitmap(imageBitmap)
 
-            // Enviar a foto para o servidor
-            if (imageBitmap != null) {
-                enviarFotoParaServidor(imageBitmap)
+                // Enviar a foto para o servidor
+                if (imageBitmap != null) {
+                    enviarFotoParaServidor(imageBitmap)
+                }
             }
         }
-    }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
-        if (isGranted) {
-            abrirCamera()
-        } else {
-            Toast.makeText(this, "Permissão da câmera negada", Toast.LENGTH_SHORT).show()
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+            if (isGranted) {
+                abrirCamera()
+            } else {
+                Toast.makeText(this, "Permissão da câmera negada", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
             ) == PackageManager.PERMISSION_GRANTED -> {
                 abrirCamera()
             }
+
             else -> {
                 requestPermissionLauncher.launch(Manifest.permission.CAMERA)
             }
@@ -116,3 +118,4 @@ class MainActivity : AppCompatActivity() {
             }
         }.start()
     }
+}
