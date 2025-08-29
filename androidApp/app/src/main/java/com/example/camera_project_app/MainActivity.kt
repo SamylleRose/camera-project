@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnTirarFoto: Button
     private lateinit var imageView: ImageView
 
-    private val SERVER_IP = "10.0.2.2" //  Coloque o IP do servidor
+    private val SERVER_IP = "192.168.1.113" //  Coloque o IP da sua rede wifi
     private val SERVER_PORT = 5001     // Mesma porta do servidor Python
 
 
